@@ -159,7 +159,8 @@ static Key keys_dialer[DIALER_KEYS] = {
 	{ "1!", 0, XK_1, 1 },
 	{ "2@", 0, XK_2, 1 },
 	{ "3#", 0, XK_3, 1 },
-	{ "⌫", 0, XK_BackSpace, 2 },
+	{ "-_", 0, XK_minus, 1 },
+	{ ",<", 0, XK_comma, 1 },
 
 	{ 0 },
 
@@ -167,8 +168,8 @@ static Key keys_dialer[DIALER_KEYS] = {
 	{ "4$", 0, XK_4, 1 },
 	{ "5%", 0, XK_5, 1 },
 	{ "6^", 0, XK_6, 1 },
-	{ "-_", 0, XK_minus, 1 },
-	{ ",<", 0, XK_comma, 1 },
+	{ "=+", 0, XK_equal, 1 },
+	{ "/?", 0, XK_slash, 1 },
 
 	{ 0 },
 
@@ -176,8 +177,7 @@ static Key keys_dialer[DIALER_KEYS] = {
 	{ "7&", 0, XK_7, 1 },
 	{ "8*", 0, XK_8, 1 },
 	{ "9(", 0, XK_9, 1 },
-	{ "=+", 0, XK_equal, 1 },
-	{ "/?", 0, XK_slash, 1 },
+	{ "⌫", 0, XK_BackSpace, 2 },
 
 	{ 0 },
 
@@ -188,7 +188,7 @@ static Key keys_dialer[DIALER_KEYS] = {
 	{ "↲ Enter", 0, XK_Return, 2},
 };
 
-#define OVERLAYS 192
+#define OVERLAYS 193
 
 static Key overlay[OVERLAYS] = {
 	{ 0, 0, XK_a },
@@ -203,7 +203,6 @@ static Key overlay[OVERLAYS] = {
 	{ "å", 0, XK_aring },
 	{ "æ", 0, XK_ae },
 	{ 0, 0, XK_Cancel },
-
 	{ 0, 0, XK_e },
 	{ "è", 0, XK_egrave },
 	{ "é", 0, XK_eacute },
@@ -212,15 +211,14 @@ static Key overlay[OVERLAYS] = {
 	{ "ę", 0, XK_eogonek },
 	{ "ē", 0, XK_emacron },
 	{ "ė", 0, XK_eabovedot },
+	{ "ě", 0, XK_ecaron },
 	{ 0, 0, XK_Cancel },
-
 	{ 0, 0, XK_y },
 	{ "ỳ", 0, XK_ygrave },
 	{ "ý", 0, XK_yacute },
 	{ "ŷ", 0, XK_ycircumflex },
 	{ "ÿ", 0, XK_ydiaeresis },
 	{ 0, 0, XK_Cancel },
-
 	{ 0, 0, XK_u },
 	{ "ù", 0, XK_ugrave },
 	{ "ú", 0, XK_uacute },
@@ -232,7 +230,6 @@ static Key overlay[OVERLAYS] = {
 	{ "ŭ", 0, XK_ubreve},
 	{ "ű", 0, XK_udoubleacute },
 	{ 0, 0, XK_Cancel },
-
 	{ 0, 0, XK_i },
 	{ "ì", 0, XK_igrave },
 	{ "í", 0, XK_iacute },
@@ -242,8 +239,6 @@ static Key overlay[OVERLAYS] = {
 	{ "ī", 0, XK_imacron },
 	{ "ı", 0, XK_idotless },
 	{ 0, 0, XK_Cancel },
-
-
 	{ 0, 0, XK_o },
 	{ "ò", 0, XK_ograve },
 	{ "ó", 0, XK_oacute },
@@ -256,19 +251,16 @@ static Key overlay[OVERLAYS] = {
 	{ "ő", 0, XK_odoubleacute },
 	{ "œ", 0, XK_oe },
 	{ 0, 0, XK_Cancel },
-
 	{ 0, 0, XK_d },
 	{ "ď", 0, XK_dcaron },
 	{ "ð", 0, XK_eth },
 	{ 0, 0, XK_Cancel },
-
 	{ 0, 0, XK_c },
 	{ "ç", 0, XK_ccedilla },
 	{ "ĉ", 0, XK_ccircumflex },
 	{ "č", 0, XK_ccaron },
 	{ "ć", 0, XK_cacute },
 	{ 0, 0, XK_Cancel },
-
 	{ 0, 0, XK_s },
 	{ "ş", 0, XK_scedilla },
 	{ "ŝ", 0, XK_scircumflex },
@@ -276,86 +268,68 @@ static Key overlay[OVERLAYS] = {
 	{ "ś", 0, XK_sacute },
 	{ "ß", 0, XK_ssharp },
 	{ 0, 0, XK_Cancel },
-
 	{ 0, 0, XK_z },
 	{ "ž", 0, XK_zcaron },
 	{ "ż", 0, XK_zabovedot },
 	{ 0, 0, XK_Cancel },
-
 	{ 0, 0, XK_n },
 	{ "ñ", 0, XK_ntilde },
 	{ "ń", 0, XK_nacute },
 	{ "ň", 0, XK_ncaron },
 	{ 0, 0, XK_Cancel },
-
 	{ 0, 0, XK_t },
 	{ "ț", 0, XK_tcedilla },
 	{ "ť", 0, XK_tcaron },
 	{ "þ", 0, XK_thorn },
 	{ 0, 0, XK_Cancel },
-
 	{ 0, 0, XK_g },
 	{ "ĝ", 0, XK_gcircumflex },
 	{ "ğ", 0, XK_gbreve },
 	{ 0, 0, XK_Cancel },
-
 	{ 0, 0, XK_h },
 	{ "ĥ", 0, XK_hcircumflex },
 	{ 0, 0, XK_Cancel },
-
 	{ 0, 0, XK_j },
 	{ "ĵ", 0, XK_jcircumflex },
 	{ 0, 0, XK_Cancel },
-
 	{ 0, 0, XK_l },
 	{ "ł", 0, XK_lstroke },
 	{ "ľ", 0, XK_lcaron },
 	{ 0, 0, XK_Cancel },
-
 	{ 0, 0, XK_r },
 	{ "ř", 0, XK_rcaron },
 	{ 0, 0, XK_Cancel },
-
 	{ 0, 0, XK_Cyrillic_softsign },
 	{ "ъ", 0, XK_Cyrillic_hardsign },
 	{ 0, 0, XK_Cancel },
-
 	{ 0, 0, XK_Cyrillic_ie },
 	{ "ё", 0, XK_Cyrillic_io },
 	{ "э", 0, XK_Cyrillic_e },
 	{ "Є", 0, XK_Ukrainian_ie },
 	{ 0, 0, XK_Cancel },
-
 	{ 0, 0, XK_Cyrillic_i },
 	{ "і", 0, XK_Ukrainian_i },
 	{ "ї", 0, XK_Ukrainian_yi },
 	{ 0, 0, XK_Cancel },
-
 	{ 0, 0, XK_Cyrillic_u },
 	{ "ў", 0, XK_Byelorussian_shortu },
 	{ 0, 0, XK_Cancel },
-
 	{ 0, 0, XK_Cyrillic_shorti },
 	{ "ј", 0, XK_Cyrillic_je },
 	{ 0, 0, XK_Cancel },
-
 	{ 0, 0, XK_Cyrillic_el },
 	{ "љ", 0, XK_Cyrillic_lje },
 	{ 0, 0, XK_Cancel },
-
 	{ 0, 0, XK_Cyrillic_en },
 	{ "њ", 0, XK_Cyrillic_nje },
 	{ 0, 0, XK_Cancel },
-
 	{ 0, 0, XK_Cyrillic_tse },
 	{ "џ", 0, XK_Cyrillic_dzhe },
 	{ 0, 0, XK_Cancel },
-
 	{ 0, 0, XK_Cyrillic_che },
 	{ "ћ", 0, XK_Serbian_tshe },
 	{ "ђ", 0, XK_Serbian_dje },
 	{ 0, 0, XK_Cancel },
-
 	{ "🙂", 0, 0x101f642 },
 	{ "😀", 0, 0x101f600 },
 	{ "😁", 0, 0x101f601 },
@@ -377,7 +351,7 @@ static Key overlay[OVERLAYS] = {
 	{ "😒", 0, 0x101f612 },
 	{ "😓", 0, 0x101f613 },
 	{ "😛", 0, 0x101f61b },
-	{ "😮", 0, 0x101f62e, 2 }, // skip shift
+	{ "😮", 0, 0x101f62e },
 	{ "😟", 0, 0x101f61f },
 	{ "😟", 0, 0x101f620 },
 	{ "😢", 0, 0x101f622 },
@@ -385,7 +359,6 @@ static Key overlay[OVERLAYS] = {
 	{ "😳", 0, 0x101f633 },
 	{ "😴", 0, 0x101f634 },
 	{ 0, 0, XK_Cancel },
-
 	{ ".", 0, XK_period, },
 	{ ":", 0, XK_colon, 26, XK_Shift_L },
 	{ ";", 0, XK_colon, 0 },
@@ -393,7 +366,6 @@ static Key overlay[OVERLAYS] = {
 	{ "?", 0, XK_slash, 0, XK_Shift_L },
 	{ ",", 0, XK_comma, 0 },
 	{ 0, 0, XK_Cancel },
-
 	{ "-", 0, XK_minus },
 	{ "_", 0, XK_minus, 24, XK_Shift_L },
 	{ "+", 0, XK_plus, 0, XK_Shift_L },
@@ -401,7 +373,6 @@ static Key overlay[OVERLAYS] = {
 	{ "*", 0, XK_8, 0, XK_Shift_L },
 	{ "=", 0, XK_plus },
 	{ 0, 0, XK_Cancel },
-
 	{ "'", 0, XK_apostrophe },
 	{ "{", 0, XK_bracketleft, 7, XK_Shift_L },
 	{ "}", 0, XK_bracketright, 0, XK_Shift_L },
