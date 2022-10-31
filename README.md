@@ -1,9 +1,7 @@
-smlss
-=====
-This is my build of svkbd. It is deployed by
-[smlss](https://sr.ht/~smlavine/smlss).
+# [smlss](https://sr.ht/~smlavine/smlss)
 
-To contact me, Sebastian LaVine, send an email to <mail@smlavine.com>.
+This is my custom configuration of
+[svkbd](https://tools.suckless.org/x/svkbd/).
 
 SVKBD: Simple Virtual Keyboard
 =================================
